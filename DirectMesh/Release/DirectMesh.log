@@ -1,0 +1,23 @@
+﻿生成启动时间为 2018/6/26 0:29:03。
+     1>项目“D:\初梦Equinox\Project\C++\DirectMesh\DirectMesh\DirectMesh.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Ot /Oy /GT /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D DIRECTMESH_EXPORTS /D DIRECTGRAPHICS3D_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DirectMesh.cpp DirectThreadSafe.cpp
+         DirectMesh.cpp
+         C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         DirectThreadSafe.cpp
+         C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\DirectMesh.res" DirectMesh.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.lib" /MACHINE:X86 /SAFESEH /DLL Release\DirectMesh.res
+         Release\DirectMesh.obj
+         Release\DirectThreadSafe.obj
+            正在创建库 D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.lib 和对象 D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.exp
+         正在生成代码
+         已完成代码的生成
+         DirectMesh.vcxproj -> D:\初梦Equinox\Project\C++\DirectMesh\Release\DirectMesh.dll
+     1>已完成生成项目“D:\初梦Equinox\Project\C++\DirectMesh\DirectMesh\DirectMesh.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.12
