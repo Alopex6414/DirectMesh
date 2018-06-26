@@ -6,8 +6,9 @@
 * @file		DirectMesh.h
 * @brief	This File is DirectX Library Common Header.
 * @author	Alopex/Helium
-* @version	v1.00a
+* @version	v1.01a
 * @date		2018-06-25	v1.00a	alopex	Create This File.
+* @date		2018-06-26	v1.01a	alopex	Add Get&Set Function.
 */
 #pragma once
 
@@ -27,6 +28,15 @@
 #define DIRECTMESH_CALLMODE	__stdcall
 
 //Enum Definition
+enum DM_GEOMETRY
+{
+	DM_CUBE = 0,			//立方体
+	DM_SPHERE = 1,			//球体
+	DM_CYLINDER = 2,		//柱体
+	DM_TORUS = 3,			//圆环
+	DM_POLYGON = 4,			//多边形
+	DM_TEAPOT = 5,			//茶壶
+};
 
 //Class Definition
 class DIRECTMESH_API DirectMesh
@@ -50,21 +60,40 @@ public:
 
 	DirectMesh(LPDIRECT3DDEVICE9 pD3D9Device);	//DirectMesh Constructor Function(~构造函数)(重载+1)
 
+	//访问
+	virtual LPDIRECT3DDEVICE9 DIRECTMESH_CALLMODE DirectMeshGetDevice() const;			//DirectMesh Get D3D9 Device(D3DXMesh获取D3D9设备)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetCube() const;					//DirectMesh Get D3D9 Cube(D3DXMesh获取立方体)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetSphere() const;					//DirectMesh Get D3D9 Sphere(D3DXMesh获取球体)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetCylinder() const;				//DirectMesh Get D3D9 Cylinder(D3DXMesh获取柱体)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetTorus() const;					//DirectMesh Get D3D9 Torus(D3DXMesh获取圆环)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetPolygon() const;				//DirectMesh Get D3D9 Polygon(D3DXMesh获取多边形)
+	virtual LPD3DXMESH DIRECTMESH_CALLMODE DirectMeshGetTeapot() const;					//DirectMesh Get D3D9 Teapot(D3DXMesh获取茶壶)
+
+	//控制
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetDevice(LPDIRECT3DDEVICE9 pD3D9Device);	//DirectMesh Set D3D9 Device(D3DXMesh设置D3D9设备)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetCube(LPD3DXMESH pD3DXMeshCube);			//DirectMesh Set D3D9 Cube(D3DXMesh设置D3D9立方体)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetSphere(LPD3DXMESH pD3DXMeshSphere);		//DirectMesh Set D3D9 Sphere(D3DXMesh设置D3D9球体)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetCylinder(LPD3DXMESH pD3DXMeshCylinder);	//DirectMesh Set D3D9 Cylinder(D3DXMesh设置D3D9柱体)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetTorus(LPD3DXMESH pD3DXMeshTorus);			//DirectMesh Set D3D9 Torus(D3DXMesh设置D3D9圆环)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetPolygon(LPD3DXMESH pD3DXMeshPolygon);		//DirectMesh Set D3D9 Polygon(D3DXMesh设置D3D9多边形)
+	virtual void DIRECTMESH_CALLMODE DirectMeshSetTeapot(LPD3DXMESH pD3DXMeshTeapot);		//DirectMesh Set D3D9 Teapot(D3DXMesh设置D3D9茶壶)
+
 	//初始化
 	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitCube(FLOAT fWidth, FLOAT fHeight, FLOAT fDepth);												//DirectMesh Initialization Cube(D3DXMesh初始化立方体)
 	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitCylinder(FLOAT fRadius1, FLOAT fRadius2, FLOAT fLength, UINT nSlices, UINT nStacks);			//DirectMesh Initialization Cylinder(D3DXMesh初始化柱体)
 	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitSphere(FLOAT fRadius, UINT nSlices, UINT nStacks);											//DirectMesh Initialization Cylinder(D3DXMesh初始化球面体)
 	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitTorus(FLOAT fInnerRadius, FLOAT fOuterRadius, UINT nSides, UINT nRings);						//DirectMesh Initialization Cylinder(D3DXMesh初始化圆环体)
 	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitPolygon(FLOAT fLength, UINT nSides);															//DirectMesh Initialization Cylinder(D3DXMesh初始化多面体)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitTeapot();																					//DirectMesh Initialization Cylinder(D3DXMesh初始化茶壶)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshInitTeapot();																						//DirectMesh Initialization Cylinder(D3DXMesh初始化茶壶)
 
 	//绘制
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetCube();					//DirectMesh Draw Subset(D3DXMesh绘制)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetCylinder();				//DirectMesh Draw Subset(D3DXMesh绘制)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetSphere();				//DirectMesh Draw Subset(D3DXMesh绘制)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetTorus();				//DirectMesh Draw Subset(D3DXMesh绘制)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetPolygon();				//DirectMesh Draw Subset(D3DXMesh绘制)
-	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetTeapot();				//DirectMesh Draw Subset(D3DXMesh绘制)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetCube();					//DirectMesh Draw Subset(D3DXMesh绘制立方体)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetCylinder();				//DirectMesh Draw Subset(D3DXMesh绘制柱体)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetSphere();				//DirectMesh Draw Subset(D3DXMesh绘制球体)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetTorus();				//DirectMesh Draw Subset(D3DXMesh绘制圆环体)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetPolygon();				//DirectMesh Draw Subset(D3DXMesh绘制多面体)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubsetTeapot();				//DirectMesh Draw Subset(D3DXMesh绘制茶壶)
+	virtual HRESULT DIRECTMESH_CALLMODE DirectMeshDrawSubset(DM_GEOMETRY eGeometry);//DirectMesh Draw Subset(D3DXMesh绘制)
 };
 
 #endif
